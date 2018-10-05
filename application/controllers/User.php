@@ -6,42 +6,49 @@ public function __construct(){
 
         parent::__construct();
   			$this->load->helper('url');
-  	 		$this->load->model('user_model');
+  	 		$this->load->model('User_model');
         $this->load->library('session');
 
 }
 
 public function index()
 {
-$this->load->view("login.php");
+  if($this->User_model->is_logined())
+  {
+    redirect('home');
+  }
+  else
+  {
+    $this->load->view("login.php");
+  }
 }
 
 public function register_user(){
 
-      $user=array(
-      'user_name'=>$this->input->post('user_name'),
-      'user_email'=>$this->input->post('user_email'),
-      'user_password'=>md5($this->input->post('user_password')),
-      'user_age'=>$this->input->post('user_age'),
-      'user_mobile'=>$this->input->post('user_mobile')
-        );
-        print_r($user);
+  $user=array(
+  'user_name'=>$this->input->post('user_name'),
+  'user_email'=>$this->input->post('user_email'),
+  'user_password'=>md5($this->input->post('user_password')),
+  'user_age'=>$this->input->post('user_age'),
+  'user_mobile'=>$this->input->post('user_mobile')
+    );
+    print_r($user);
 
-$email_check=$this->user_model->email_check($user['user_email']);
+  $email_check=$this->user_model->email_check($user['user_email']);
 
-if($email_check){
-  $this->user_model->register_user($user);
-  $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
-  redirect('user/login_view');
+  if($email_check){
+    $this->user_model->register_user($user);
+    $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
+    redirect('user/login_view');
 
-}
-else{
+  }
+  else{
 
-  $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
-  redirect('user/register_view');
+    $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
+    redirect('user/register_view');
 
 
-}
+  }
 
 }
 
@@ -71,7 +78,7 @@ function login_user(){
         $this->session->set_userdata('user_age',$data['user_age']);
         $this->session->set_userdata('user_mobile',$data['user_mobile']);
 
-        $this->load->view('user_profile.php');
+        $this->load->view('/home/home.php');
       }
       else{
         $this->session->set_flashdata('error_msg', 'Error occured,Try again.');

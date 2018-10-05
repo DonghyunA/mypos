@@ -34,7 +34,7 @@
                               </div>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="이메일(E-mail)" name="user_email" type="email" autofocus>
+                                  <input class="form-control" placeholder="이메일(E-mail)" name="user_email" type="email" >
                               </div>
                               <div class="form-group">
                                   <input class="form-control" placeholder="패스워드(Password)" name="user_password" type="password" value="">
