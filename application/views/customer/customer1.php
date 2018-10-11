@@ -56,25 +56,19 @@
               신규 등록</div>
             <div class="card-body">
               <div class="table-responsive">
-                <table id="table"
-                  data-toolbar="#toolbar"
-                  data-search="true"
-                  data-show-refresh="true"
-                  data-show-toggle="true"
-                  data-show-columns="true"
-                  data-show-export="true"
-                  data-detail-view="true"
-                  data-detail-formatter="detailFormatter"
-                  data-minimum-count-columns="2"
-                  data-show-pagination-switch="true"
-                  data-pagination="true"
-                  data-id-field="id"
-                  data-page-list="[10, 25, 50, 100, ALL]"
-                  data-show-footer="false"
-                  data-side-pagination="server"
-                  data="[1]"
-                  data-response-handler="responseHandler">
-               </table>
+              <table data-toggle="table"
+       data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+       data-click-to-select="true">
+    <thead>
+    <tr>
+        <th data-field="state" data-checkbox="true" data-formatter="stateFormatter"></th>
+        <th data-field="name">Name</th>
+        <th data-field="stargazers_count">Stars</th>
+        <th data-field="forks_count">Forks</th>
+        <th data-field="description">Description</th>
+    </tr>
+    </thead>
+</table>
               </div>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
@@ -84,4 +78,6 @@
         <!-- /.container-fluid -->
 
 <?php $this->load->view("common/footer"); ?>
- 
+$('#dataTable').bootstrapTable('refresh', {
+  url:
+})

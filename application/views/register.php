@@ -30,14 +30,14 @@
                       <form role="form" method="post" action="<?php echo base_url('user/register_user'); ?>">
                           <fieldset>
                               <div class="form-group">
-                                  <input class="form-control" placeholder="이름" name="user_name" type="text" autofocus>
+                                  <input class="form-control" placeholder="*이름" name="user_name" type="text" required="required" autofocus>
                               </div>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="이메일(E-mail)" name="user_email" type="email" >
+                                  <input class="form-control" placeholder="*이메일(E-mail)" name="user_email" required="required" type="email" >
                               </div>
                               <div class="form-group">
-                                  <input class="form-control" placeholder="패스워드(Password)" name="user_password" type="password" value="">
+                                  <input class="form-control" placeholder="*패스워드(Password)" name="user_password" type="password" required="required" value="">
                               </div>
 
                               <div class="form-group">
@@ -45,7 +45,7 @@
                               </div>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="핸드폰번호(Mobile No)" name="user_mobile" type="number" value="">
+                                  <input class="form-control" placeholder="*핸드폰번호(Mobile No)" name="user_mobile" type="number" value="" required="required">
                               </div>
 
                               <input class="btn btn-lg btn-success btn-block" type="submit" value="등록" name="register" >

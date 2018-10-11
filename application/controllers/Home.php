@@ -11,5 +11,9 @@ class Home extends CI_Controller {
     {
         $this->load->view('home/home');
     }
+    public function temp()
+    {
+        $this->load->view('login/login');
+    }
 }
 ?>

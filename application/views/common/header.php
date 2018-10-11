@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Dashboard</title>
+    <title>My Pos</title>
 
     <!-- Bootstrap core CSS-->
     <link href="<?php echo base_url("public/vendor/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
@@ -19,10 +19,11 @@
 
     <!-- Page level plugin CSS-->
     <link href="<?php echo base_url("public/vendor/datatables/dataTables.bootstrap4.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("public/vendor/datatables/bootstrap-table.css"); ?>" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url("public/css/sb-admin.css"); ?>" rel="stylesheet">
-
+  
   </head>
 
   <body id="page-top">
@@ -110,7 +111,7 @@
     </a>
     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
       <h6 class="dropdown-header">Login Screens:</h6>
-      <a class="dropdown-item" href="login.html">Login</a>
+      <a class="dropdown-item" href="<?php echo site_url('home/temp'); ?>">Login</a>
       <a class="dropdown-item" href="register.html">Register</a>
       <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
       <div class="dropdown-divider"></div>
