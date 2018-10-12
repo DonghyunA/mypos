@@ -27,6 +27,7 @@ class Customer_model extends CI_model{
 
                 $this->db->select('*');
                 $this->db->from('customer');
+                $this->db->where('c_whos', $this->session->userdata('user_email'));
                 $this->db->where('c_business_name',$c_business_name);
                 $query=$this->db->get();
 
@@ -37,15 +38,13 @@ class Customer_model extends CI_model{
         }
 
         }
-        public function is_logined(){
-        if($this->session->userdata('user_email')!= null)
-        {
-                return true;
-        }
-        else
-                {
-                        return false;
-                }
+        public function get_customer_info_all(){
+                $this->db->from('customer');
+		//$this->db->join('user', 'customer.c_whos = user.user_email');
+		$this->db->where('c_whos', $this->session->userdata('user_email'));
+		//$this->db->order_by('last_name', 'asc');
+                $query=$this->db->get();
+		return $query->result();
         }
 
 

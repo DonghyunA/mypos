@@ -57,15 +57,15 @@
             <div class="card-body">
               <div class="table-responsive">
               <table data-toggle="table"
-       data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+       data=<?php echo json_encode($customers_data); ?>,
        data-click-to-select="true">
     <thead>
     <tr>
         <th data-field="state" data-checkbox="true" data-formatter="stateFormatter"></th>
-        <th data-field="name">Name</th>
-        <th data-field="stargazers_count">Stars</th>
-        <th data-field="forks_count">Forks</th>
-        <th data-field="description">Description</th>
+        <th data-field="c_business_name">Name</th>
+        <th data-field="c_representative">Stars</th>
+        <th data-field="c_address">Forks</th>
+        <th data-field="c_phone">Descripution</th>
     </tr>
     </thead>
 </table>
@@ -78,6 +78,3 @@
         <!-- /.container-fluid -->
 
 <?php $this->load->view("common/footer"); ?>
-$('#dataTable').bootstrapTable('refresh', {
-  url:
-})

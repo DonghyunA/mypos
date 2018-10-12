@@ -9,7 +9,9 @@ class Customer extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('customer/customer');
+        $data = array();
+        $data['customers_data'] = $this->make_customer_data();
+        $this->load->view('customer/customer', $data);
     }
     public function save()
     {
@@ -38,6 +40,16 @@ class Customer extends CI_Controller {
             header("Refresh");
         }
             
+    }
+    public function view()
+    {
+       // get_customer_info_all
+    }
+    public function make_customer_data()
+    {
+        $data = $this->Customer_model->get_customer_info_all();
+        //echo var_dump($data);
+        return $data;
     }
 }
 ?>
