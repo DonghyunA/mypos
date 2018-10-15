@@ -65,7 +65,6 @@
                         data-toolbar="#toolbar"
                         data-search="true"
                         data-show-refresh="true"
-                        data-show-toggle="true"
                         data-show-columns="true"
                         data-show-export="true"
                         data-detail-view="true"
@@ -97,8 +96,8 @@
       selections = [];
 	function initTable() {
         $table.bootstrapTable({
-          columns: [
-                
+            height: getHeight(),
+            columns: [
                     {
                         field: 'state',
                         checkbox: true,
@@ -107,14 +106,44 @@
                     }, {
                         title: '상호명',
                         field: 'c_business_name',
+                        sortable: true,
                     }, {
                         field: 'c_representative',
                         title: '대표자',
+                        sortable: true,
                     }, {
                         field: 'c_c_number',
                         title: '사업자번호',
-                        
-                    } 
+                        sortable: true,
+                    }, {
+                        field: 'c_address',
+                        title: '주소',
+                        sortable: true,
+                    }, {
+                        field: 'c_phone',
+                        title: '전화번호',
+                        sortable: true,
+                    },  {
+                        field: 'c_c_category',
+                        title: '업태',
+                        sortable: true,
+                    },  {
+                        field: 'c_c_kind',
+                        title: '종목',
+                        sortable: true,
+                    },  {
+                        field: 'c_email',
+                        title: '이메일',
+                        sortable: true,
+                    },  {
+                        field: 'c_date',
+                        title: '등록일',
+                        sortable: true,
+                    },  {
+                        field: 'c_comment',
+                        title: '메모',
+                        sortable: true,
+                    }     
                 
             ],
             //data:[{state:true,c_business_name:"t",c_representative:"1",c_c_number:"2"}]
@@ -146,9 +175,10 @@
         $remove.click(function () {
             var ids = getIdSelections();
             $table.bootstrapTable('remove', {
-                field: 'id',
+                field: 'c_business_name',
                 values: ids
             });
+            delete_customer_info(ids);
             $remove.prop('disabled', true);
         });
         $(window).resize(function () {
@@ -157,14 +187,14 @@
             });
         });
     }
-  function getIdSelections() {
+    function getIdSelections() {
         return $.map($table.bootstrapTable('getSelections'), function (row) {
-            return row.id
+            return row.c_business_name
         });
     }
     function responseHandler(res) {
         $.each(res.rows, function (i, row) {
-            row.state = $.inArray(row.id, selections) !== -1;
+            row.state = $.inArray(row.c_business_name, selections) !== -1;
         });
         return res;
     }
@@ -175,27 +205,6 @@
         });
         return html.join('');
     }
-    function operateFormatter(value, row, index) {
-        return [
-            '<a class="like" href="javascript:void(0)" title="Like">',
-            '<i class="fa fa-heart-o"></i>',
-            '</a>  ',
-            '<a class="remove" href="javascript:void(0)" title="Remove">',
-            '<i class="fa fa-trash"></i>',
-            '</a>'
-        ].join('');
-    }
-    window.operateEvents = {
-        'click .like': function (e, value, row, index) {
-            alert('You click like action, row: ' + JSON.stringify(row));
-        },
-        'click .remove': function (e, value, row, index) {
-            $table.bootstrapTable('remove', {
-                field: 'id',
-                values: [row.id]
-            });
-        }
-    };
     function totalTextFormatter(data) {
         return 'Total';
     }
@@ -212,12 +221,23 @@
     function getHeight() {
         return $(window).height() - $('h1').outerHeight(true);
     }
+    function delete_customer_info(ids){
+        $.post(location.search.substring(1) + 'customer/delete_customer_info', {"c_business_name": ids}, function (response) {
+            //delete was successful, remove checkbox rows
+            if (response.success) {
+                console.log(response.success);
+            } else {
+                console.log(response);
+                }
+        }, "json");
+
+    }
     $(function () {
         var scripts = [
-                location.search.substring(1) || '../public/vendor/datatables/bootstrap-table.js',
-                '../public/vendor/datatables/bootstrap-table-export.js',
+                location.search.substring(1) || 'public/vendor/datatables/bootstrap-table.js',
+                'public/vendor/datatables/bootstrap-table-export.js',
                 'http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js',
-                '../public/vendor/datatables/bootstrap-table-editable.js',
+                'public/vendor/datatables/bootstrap-table-editable.js',
                 'http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js'
             ],
             eachSeries = function (arr, iterator, callback) {

@@ -32,7 +32,7 @@ class Customer extends CI_Controller {
                 );
                 
                 $this->Customer_model->register_customer($customer);
-                redirect('Customer/index');
+                redirect('Customer');
         }
         else
         {
@@ -50,6 +50,11 @@ class Customer extends CI_Controller {
         $data = $this->Customer_model->get_customer_info_all();
         //echo var_dump($data);
         return $data;
+    }
+    public function delete_customer_info()
+    {
+        $customers_to_delete = $this->input->post('c_business_name');//isset($_POST['c_business_name']) ? $_POST['c_business_name'] : NULL;
+        $this->Customer_model->delete_customer_info_row($customers_to_delete);
     }
 }
 ?>

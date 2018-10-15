@@ -47,6 +47,14 @@ class Customer_model extends CI_model{
 		return $query->result();
         }
 
+        public function delete_customer_info_row($customers_to_delete){
+                foreach($customers_to_delete as $info)
+                {
+                        $this->db->delete('customer',array('c_business_name'=> $info, 'c_whos'=> $this->session->userdata('user_email')));
+                }
+                
+        }
+
 
 }
 
