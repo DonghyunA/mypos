@@ -123,6 +123,12 @@
       <span>거래처관리</span>
     </a>
   </li>
+  <li class="nav-item active"> <!-- active 유무는 함수를 이용할 예정 -->
+    <a class="nav-link" href="<?php echo site_url('item'); ?>">
+      <i class="fas fa-fw fa-address-book"></i>
+      <span>물건관리</span>
+    </a>
+  </li>
   <li class="nav-item active"> <!-- active는 함수를 이용할 예정 -->
     <a class="nav-link" href="<?php echo site_url('home'); ?>">
       <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -148,7 +154,7 @@
   <li class="nav-item">
     <a class="nav-link" href="/chart/charts">
       <i class="fas fa-fw fa-chart-area"></i>
-      <span>Charts</span></a>
+      <span>통계</span></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/table/tables">
