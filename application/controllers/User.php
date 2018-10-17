@@ -5,10 +5,6 @@ class User extends CI_Controller {
 public function __construct(){
 
         parent::__construct();
-  			$this->load->helper('url');
-  	 		$this->load->model('User_model');
-        $this->load->library('session');
-
 }
 
 public function index()
@@ -34,10 +30,10 @@ public function register_user(){
     );
     print_r($user);
 
-  $email_check=$this->user_model->email_check($user['user_email']);
+  $email_check=$this->User_model->email_check($user['user_email']);
 
   if($email_check){
-    $this->user_model->register_user($user);
+    $this->User_model->register_user($user);
     $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
     redirect('user/login_view');
 
@@ -69,7 +65,7 @@ function login_user(){
   'user_password'=>md5($this->input->post('user_password'))
 
     );
-    $data=$this->user_model->login_user($user_login['user_email'],$user_login['user_password']);
+    $data=$this->User_model->login_user($user_login['user_email'],$user_login['user_password']);
       if($data)
       {
         $this->session->set_userdata('user_id',$data['user_id']);

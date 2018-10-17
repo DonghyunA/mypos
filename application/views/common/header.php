@@ -9,20 +9,46 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Dashboard</title>
+    <title>My Pos</title>
 
     <!-- Bootstrap core CSS-->
     <link href="<?php echo base_url("public/vendor/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
+    
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url("public/vendor/fontawesome-free/css/all.min.css"); ?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url("public/vendor/fontawesome-free/css/v4-shims.css"); ?>" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
     <link href="<?php echo base_url("public/vendor/datatables/dataTables.bootstrap4.css"); ?>" rel="stylesheet">
-
+    <link href="<?php echo base_url("public/vendor/datatables/bootstrap-table.css"); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url("public/css/sb-admin.css"); ?>" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url("public/vendor/jquery/jquery.min.js");?>"></script>
+    <script src="<?php echo base_url("public/vendor/bootstrap/js/bootstrap.bundle.min.js");?>"></script>
+    <script src="<?php echo base_url("public/vendor/bootstrap/js/bootstrap.js");?>"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url("public/vendor/jquery-easing/jquery.easing.min.js");?>"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="<?php echo base_url("public/vendor/chart.js/Chart.min.js");?>"></script>
+    <script src="<?php echo base_url("public/vendor/datatables/jquery.dataTables.js")?>"></script>
+    <script src="<?php echo base_url("public/vendor/datatables/dataTables.bootstrap4.js");?>"></script>
+    <script src="<?php echo base_url("public/vendor/datatables/bootstrap-table.js");?>"></script>
+    <script src="<?php echo base_url("public/vendor/datatables/bootstrap-table-ko-KR.js");?>"></script>
+    <script src="<?php echo base_url("public/vendor/datatables/bootstrap-table-editable.js");?>"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url("public/js/sb-admin.min.js");?>"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="<?php echo base_url("public/js/demo/datatables-demo.js");?>"></script>
+    <!-- <script src="<?php echo base_url("public/js/demo/chart-area-demo.js");?>"></script> -->
+    
   </head>
 
   <body id="page-top">
@@ -97,6 +123,12 @@
       <span>거래처관리</span>
     </a>
   </li>
+  <li class="nav-item active"> <!-- active 유무는 함수를 이용할 예정 -->
+    <a class="nav-link" href="<?php echo site_url('item'); ?>">
+      <i class="fas fa-fw fa-boxes"></i>
+      <span>물건관리</span>
+    </a>
+  </li>
   <li class="nav-item active"> <!-- active는 함수를 이용할 예정 -->
     <a class="nav-link" href="<?php echo site_url('home'); ?>">
       <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -110,7 +142,7 @@
     </a>
     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
       <h6 class="dropdown-header">Login Screens:</h6>
-      <a class="dropdown-item" href="login.html">Login</a>
+      <a class="dropdown-item" href="<?php echo site_url('home/temp'); ?>">Login</a>
       <a class="dropdown-item" href="register.html">Register</a>
       <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
       <div class="dropdown-divider"></div>
@@ -122,7 +154,7 @@
   <li class="nav-item">
     <a class="nav-link" href="/chart/charts">
       <i class="fas fa-fw fa-chart-area"></i>
-      <span>Charts</span></a>
+      <span>통계</span></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/table/tables">

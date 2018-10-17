@@ -38,10 +38,10 @@
                     <form role="form" method="post" action="<?php echo base_url('user/login_user'); ?>">
                         <fieldset>
                             <div class="form-group"  >
-                                <input class="form-control" placeholder="이메일(E-mail)" name="user_email" type="email" autofocus>
+                                <input class="form-control" placeholder="이메일(E-mail)" name="user_email" type="email" required="required" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="패스워드(Password)" name="user_password" type="password" value="">
+                                <input class="form-control" placeholder="패스워드(Password)" name="user_password" type="password" value="" required="required">
                             </div>
 
 

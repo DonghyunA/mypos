@@ -1,5 +1,5 @@
 <?php $this->load->view("common/header"); ?>
-<?php $this->load->view("customer/new_customer_modal"); ?>
+<?php $this->load->view("item/new_item_modal"); ?>
 
       <div id="content-wrapper">
 
@@ -8,7 +8,7 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">거래처 관리</a>
+              <a href="#">물건 관리</a>
             </li>
             <li class="breadcrumb-item active">등록, 수정 및 삭제</li>
           </ol>
@@ -23,7 +23,7 @@
                   </div>
                   <div class="mr-5">신규등록</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#" data-toggle="modal" data-target="#new_customer_modal">
+                <a class="card-footer text-white clearfix small z-1" href="#" data-toggle="modal" data-target="#new_item_modal">
                   <span class="float-left">View Details</span>
                   <span class="float-right">
                     <i class="fas fa-angle-right"></i>
@@ -53,7 +53,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-pencil-alt"></i>
-              거래처 목록</div>
+              물건 목록</div>
             <div class="card-body">
               <div class="container">
                 <div id="toolbar">
@@ -98,50 +98,34 @@
                         align: 'center',
                         valign: 'middle'
                     }, {
-                        title: '상호명',
-                        field: 'c_business_name',
+                        title: '품목명',
+                        field: 'i_name',
                         sortable: true,
                     }, {
-                        field: 'c_representative',
-                        title: '대표자',
+                        field: 'i_producer',
+                        title: '생산자',
                         sortable: true,
                     }, {
-                        field: 'c_c_number',
-                        title: '사업자번호',
+                        field: 'i_quality',
+                        title: '품질',
                         sortable: true,
                     }, {
-                        field: 'c_address',
-                        title: '주소',
+                        field: 'i_quantity',
+                        title: '수량',
                         sortable: true,
                     }, {
-                        field: 'c_phone',
-                        title: '전화번호',
+                        field: 'i_purchased',
+                        title: '구입처',
                         sortable: true,
-                    },  {
-                        field: 'c_c_category',
-                        title: '업태',
+                    }, {
+                        field: 'i_date',
+                        title: '등록날짜',
                         sortable: true,
-                    },  {
-                        field: 'c_c_kind',
-                        title: '종목',
-                        sortable: true,
-                    },  {
-                        field: 'c_email',
-                        title: '이메일',
-                        sortable: true,
-                    },  {
-                        field: 'c_date',
-                        title: '등록일',
-                        sortable: true,
-                    },  {
-                        field: 'c_comment',
-                        title: '메모',
-                        sortable: true,
-                    }     
+                    }, 
                 
             ],
             //data:[{state:true,c_business_name:"t",c_representative:"1",c_c_number:"2"}]
-            data:<?php echo json_encode($customers_data); ?>,
+            data:<?php echo json_encode($items_data); ?>,
             sortable: true,
             pagination: true,
             pageSize: 10,
