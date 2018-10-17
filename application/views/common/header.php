@@ -125,7 +125,7 @@
   </li>
   <li class="nav-item active"> <!-- active 유무는 함수를 이용할 예정 -->
     <a class="nav-link" href="<?php echo site_url('item'); ?>">
-      <i class="fas fa-fw fa-address-book"></i>
+      <i class="fas fa-fw fa-boxes"></i>
       <span>물건관리</span>
     </a>
   </li>
