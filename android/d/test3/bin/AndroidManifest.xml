@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.test3"
+    android:background="#00000000"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="L.Pick(택배대신접수)"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="L.Pick(택배대신접수)" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Qr_maker"
+            android:label="@string/title_activity_qr_maker" >
+        </activity>
+        <activity
+            android:name=".Daum_web_view_activity"
+            android:label="@string/title_activity_daum_web_view_activity" >
+        </activity>
+        <activity
+            android:name=".Send_info"
+            android:label="@string/title_activity_send_info" >
+        </activity>
+        <activity
+            android:name=".Resive_info"
+            android:label="@string/title_activity_resive_info" >
+        </activity>
+        <activity
+            android:name=".Item_info"
+            android:label="@string/title_activity_item_info" >
+        </activity>
+        <activity
+            android:name=".InsertAndShowQRCode"
+            android:label="@string/title_activity_insertandshowqrcode" >
+        </activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:label="@string/title_activity_web_view" >
+        </activity>
+        <activity
+            android:name=".Item_list"
+            android:label="@string/title_activity_item_list" >
+        </activity>
+    </application>
+
+</manifest>

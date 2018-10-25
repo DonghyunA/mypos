@@ -1,0 +1,234 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00000000"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#99d9ea"
+        android:text="물품 정보"
+        android:textStyle="bold" />
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="포장박스 크기"
+            android:layout_weight="3"/>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+            <LinearLayout 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="horizontal"
+            	>
+	            <TextView 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="중량"
+	                android:textStyle="bold"/>
+	            <Spinner 
+		            android:id = "@+id/snipper_item_weight"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:entries="@array/item_weight"/>
+	            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="부피"
+		                android:textStyle="bold"/>
+	            <Spinner 
+		            android:id = "@+id/snipper_item_volume"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:entries="@array/item_volume"/>
+            </LinearLayout>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(부피=가로+세로+높이)"/>
+            <TextView 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="부피는 160cm이내, 한변의 길이는 100cm 이내에 한해 취급, 중량과 부피중에 큰 것에 해당하는 요금을 적용합니다."
+                android:textColor="#1957AE"
+                />
+            <TextView 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="※ 단, 당일특급 우편물의 경우 중량은 20kg이하이고, 크기는 140cm이내에 한하여 취급합니다."
+                android:textColor="#ff0000"/>
+            <TextView 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="※ 1박스의 중량이 30kg을 초과하는 경우 접수가 불가합니다. "
+                android:textColor="#ff0000"/>
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+
+    
+      
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="내용물코드"
+            android:layout_weight="3"/>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+	            
+            <Spinner 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/snipper_item_code"
+                android:entries="@array/item_code"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="우체국은 냉동/냉장차량을 전체적으로 운영하고 있지않으니,별도포장(보냉)이 필요함을 알려드립니다. "
+                android:textColor="#1957AE"/>
+            	
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="내용물"
+            android:layout_weight="3"/>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+	            
+            <EditText 
+                android:id="@+id/item_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginRight="3dp"/>
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button 
+                    android:id="@+id/btn_restrict_item"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="취급제한품목"
+	                android:textColor="#3b9a90"/>
+                <Button 
+                    android:id="@+id/btn_insurance_item"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="보험취급 및 손해배상안내"
+	                android:textColor="#3b9a90"/>
+            </LinearLayout>
+            
+            	
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="물품수량"
+            android:layout_weight="3"/>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+	            <LinearLayout 
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:orientation="horizontal">
+					
+	                <EditText 
+	                    android:id="@+id/item_count"
+		                android:layout_width="50dp"
+		                android:layout_height="wrap_content"
+		                android:singleLine="true"/>
+	                <TextView 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="개 "/>
+	                	
+	            </LinearLayout>
+	            <TextView 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="(동일물품을 동일주소지로 여러 개 신청할 경우, 10개 이하)"/>
+	            
+            	
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_item_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.19"
+            android:background="#99d9ea"
+            android:gravity="center"
+            android:text="이전" />
+
+        <Button
+            android:id="@+id/btn_item_next"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_weight="0.20"
+            android:background="#99d9ea"
+            android:gravity="center"
+            android:text="다음" />
+    </LinearLayout>
+         
+</LinearLayout>
