@@ -6,7 +6,7 @@
     include('dbcon2.php');
         
 
-    $stmt = $con->prepare('select * from item');
+    $stmt = $con->prepare('select * from item ORDER BY i_name ASC, i_date ASC');
     $stmt->execute();
 
     if ($stmt->rowCount() > 0)

@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
@@ -30,7 +31,8 @@ public class Item_list extends Activity {
 	private static String IP_ADDRESS = "10.1.31.177";
     private static String TAG = "phptest";
     private String mJsonString;
-    //private ArrayList<PersonalData> mArrayList;
+    //private ArrayList<ListviewItem> mArrayList;
+    
     
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -140,6 +142,11 @@ public class Item_list extends Activity {
 	        String TAG_PURCHASED ="i_purchased";
 	        String TAG_DATE ="i_date";
 	        final LinearLayout lm = (LinearLayout) findViewById(R.id.l_layout);
+	        ListView listview;
+	        ListViewAdapter adapter;
+	        adapter = new ListViewAdapter();
+	        listview = (ListView)findViewById(R.id.item_list);
+	        listview.setAdapter(adapter);
 
 	        try {
 	            JSONObject jsonObject = new JSONObject(mJsonString);
@@ -147,7 +154,7 @@ public class Item_list extends Activity {
 	            
 	             // linearLayout params 沥狼
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                        LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+                        LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
                 
 	            for(int i=0;i<jsonArray.length();i++){
 
@@ -159,20 +166,38 @@ public class Item_list extends Activity {
 	                String i_purchased = item.getString(TAG_PURCHASED);
 	                String i_date = item.getString(TAG_DATE);
 
-
+	                //备炼眉俊 持扁
+	                adapter.addItem(i_name, i_producer, i_quality, i_purchased, i_date);
+	                
+	                
 	             // LinearLayout 积己
 	                LinearLayout ll = new LinearLayout(Item_list.this);
 	                ll.setOrientation(LinearLayout.HORIZONTAL);
 
 	                // TextView 积己
-	                TextView tvProdc = new TextView(Item_list.this);
-	                tvProdc.setText("Name" + i + " ");
-	                ll.addView(tvProdc);
+	                TextView tvName = new TextView(Item_list.this);
+	                tvName.setText("Name : " + i_name + " ");
+	                ll.addView(tvName);
 
 	                // TextView 积己
-	                TextView tvAge = new TextView(Item_list.this);
-	                tvAge.setText("   Age" + i + "  ");
-	                ll.addView(tvAge);
+	                TextView tvProducer = new TextView(Item_list.this);
+	                tvProducer.setText("i_producer : " + i_producer + "  ");
+	                ll.addView(tvProducer);
+	                
+	                // TextView 积己
+	                TextView tvQuality = new TextView(Item_list.this);
+	                tvQuality.setText("i_quality : " + i_quality + "  ");
+	                ll.addView(tvQuality);
+	                
+	                // TextView 积己
+	                TextView tvpurchased = new TextView(Item_list.this);
+	                tvpurchased.setText("i_purchased : " + i_purchased + "  ");
+	                ll.addView(tvpurchased);
+	                
+	                // TextView 积己
+	                TextView tvDate = new TextView(Item_list.this);
+	                tvDate.setText("i_date : " + i_date + "  ");
+	                ll.addView(tvDate);
 
 	                // 滚瓢 积己
 	                final Button btn = new Button(Item_list.this);
@@ -217,6 +242,7 @@ public class Item_list extends Activity {
     	
     }
 }
+//http://recipes4dev.tistory.com/42#3-fragment%EC%97%90%EC%84%9C-listview-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
 //webnautes.tistory.com/829
 //protected void onCreate(Bundle savedInstanceState) {
 //    super.onCreate(savedInstanceState);
