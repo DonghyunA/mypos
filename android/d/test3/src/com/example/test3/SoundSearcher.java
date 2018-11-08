@@ -88,4 +88,35 @@ public class SoundSearcher
    } 
   return false; //일치하는 것을 찾지 못했으면 false를 리턴한다.
  }
+
+public static boolean matchfirstchar(String value, char search){ 
+	  int t = 0; 
+	  //int seof = value.length() - search.length(); 
+	  int slen = 1; 
+	  //if(seof < 0) 
+	  // return false; //검색어가 더 길면 false를 리턴한다. 
+	  //for(int i = 0;i <= seof;i++){ 
+	   t = 0; 
+	   while(t < slen){ 
+	    if(isInitialSound(search)==true && isHangul(value.charAt(t))){ 
+	     //만약 현재 char이 초성이고 value가 한글이면
+	     if(getInitialSound(value.charAt(t))==search) 
+	      //각각의 초성끼리 같은지 비교한다
+	      t++; 
+	     else 
+	      break; 
+	    } else { 
+	     //char이 초성이 아니라면
+	     if(value.charAt(t)==search) 
+	      //그냥 같은지 비교한다. 
+	      t++; 
+	     else 
+	      break; 
+	    } 
+	   } 
+	   if(t == slen) 
+	    return true; //모두 일치한 결과를 찾으면 true를 리턴한다. 
+	   else 
+	  return false; //일치하는 것을 찾지 못했으면 false를 리턴한다.
+	  }
 }

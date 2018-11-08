@@ -28,7 +28,10 @@ public class ListViewAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		return position;
 	}
-
+	public ArrayList<ListviewItem> getArrayItem()
+	{
+		return listViewItemList;
+	}
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		//final int pos = position;
@@ -67,5 +70,15 @@ public class ListViewAdapter extends BaseAdapter {
 		
 		listViewItemList.add(item);
 	}
+	public void addItem(Object obj)
+	{
+		ListviewItem item = (ListviewItem) obj;
+		listViewItemList.add(item);
+	}
+	public void clear()
+	{
+		listViewItemList.clear();
+	}
+
 
 }

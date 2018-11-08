@@ -32,8 +32,10 @@ public class Item_list extends Activity {
     private static String TAG = "phptest";
     private String mJsonString;
     //private ArrayList<ListviewItem> mArrayList;
-    
-    
+    private static final char[] INITIAL_SOUND = { 'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' };
+	ArrayList<ListviewItem> temp_iteminfo = new ArrayList<ListviewItem>();
+	ListViewAdapter adapter = new ListViewAdapter();
+	
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,21 @@ public class Item_list extends Activity {
         GetData task = new GetData();
         Intent intent = getIntent();
         task.execute( "http://" + IP_ADDRESS + "/getjson.php", intent.getExtras().getString("user_id"));
+        
+        Button btn_total = (Button) findViewById(R.id.total);
+        btn_total.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				adapter.clear();
+            	for(int i= 0; i < temp_iteminfo.size();i++)
+            	{
+        			adapter.addItem(temp_iteminfo.get(i));
+        			adapter.notifyDataSetChanged();
+            	}
+			}
+		});
 
     }
     
@@ -49,6 +66,7 @@ public class Item_list extends Activity {
     private class GetData extends AsyncTask<String, Void, String>{
     	ProgressDialog progressDialog;
     	String errorString = null;
+
 		@Override
 		protected String doInBackground(String... params) {
 			
@@ -131,6 +149,8 @@ public class Item_list extends Activity {
 			else{
 				mJsonString = result;
 				showResult();
+				//임시 구조체에 저장
+            	temp_iteminfo.addAll(adapter.getArrayItem());
 			}
 		}
 		private void showResult(){
@@ -143,82 +163,144 @@ public class Item_list extends Activity {
 	        String TAG_DATE ="i_date";
 	        final LinearLayout lm = (LinearLayout) findViewById(R.id.l_layout);
 	        ListView listview;
-	        ListViewAdapter adapter;
-	        adapter = new ListViewAdapter();
+	        
+	        
 	        listview = (ListView)findViewById(R.id.item_list);
 	        listview.setAdapter(adapter);
-
+	        boolean [] chosung = new boolean[19]; 
 	        try {
 	            JSONObject jsonObject = new JSONObject(mJsonString);
 	            JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
 	            
 	             // linearLayout params 정의
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                        LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-                
-	            for(int i=0;i<jsonArray.length();i++){
+                        LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+                for(int j=0;j<INITIAL_SOUND.length;j++)
+                {
+                	for(int k=0;k<jsonArray.length();k++)
+                	{
+    	                JSONObject item = jsonArray.getJSONObject(k);
 
-	                JSONObject item = jsonArray.getJSONObject(i);
+    	                String i_name = item.getString(TAG_NAME);
+    	                String i_producer = item.getString(TAG_PRODUCER);
+    	                String i_quality = item.getString(TAG_QUALITY);
+    	                String i_purchased = item.getString(TAG_PURCHASED);
+    	                String i_date = item.getString(TAG_DATE);
 
-	                String i_name = item.getString(TAG_NAME);
-	                String i_producer = item.getString(TAG_PRODUCER);
-	                String i_quality = item.getString(TAG_QUALITY);
-	                String i_purchased = item.getString(TAG_PURCHASED);
-	                String i_date = item.getString(TAG_DATE);
+    	                //구조체에 넣기
+    	                if(j==0)
+    	                {
+    	                	adapter.addItem(i_name, i_producer, i_quality, i_purchased, i_date);
+    	                }
+    	                
+    	                //System.out.println("j=" + j + "    k="+ k + "bool = " + SoundSearcher.matchfirstchar(jsonArray.getJSONObject(k).getString(TAG_NAME), INITIAL_SOUND[j]));
+                		if(SoundSearcher.matchfirstchar(jsonArray.getJSONObject(k).getString(TAG_NAME), INITIAL_SOUND[j]) ==true)
+                		{
+                			chosung[j] = true;
+                		}
+                	}
+                	if(chosung[j] == true)
+                	{
+//       	             // LinearLayout 생성
+    	                LinearLayout ll = new LinearLayout(Item_list.this);
+    	                ll.setOrientation(LinearLayout.HORIZONTAL);
+                		// 버튼 생성
+    	                
+    	                final Button btn = new Button(Item_list.this);
+    	                // setId 버튼에 대한 키값
+    	                btn.setId(j + 1);
+    	                btn.setText(Character.toString(INITIAL_SOUND[j]));
+    	                btn.setLayoutParams(params);
 
-	                //구조체에 넣기
-	                adapter.addItem(i_name, i_producer, i_quality, i_purchased, i_date);
-	                
-	                
-	             // LinearLayout 생성
-	                LinearLayout ll = new LinearLayout(Item_list.this);
-	                ll.setOrientation(LinearLayout.HORIZONTAL);
+    	                final int position = j;
 
-	                // TextView 생성
-	                TextView tvName = new TextView(Item_list.this);
-	                tvName.setText("Name : " + i_name + " ");
-	                ll.addView(tvName);
+    	                btn.setOnClickListener(new OnClickListener() {
+    	                    public void onClick(View v) {
+    	                    	
+    	                    	adapter.clear();
+    	                    	for(int i= 0; i < temp_iteminfo.size();i++)
+    	                    	{
+    	                    		if(SoundSearcher.matchfirstchar(temp_iteminfo.get(i).getList_i_name(),INITIAL_SOUND[position]))
+    	                    		{
+    	                    			adapter.addItem(temp_iteminfo.get(i));
+    	                    			adapter.notifyDataSetChanged();
+    	                    		}
+    	                    	}
+    	                        Log.d("log", "position :" + position);
+    	                        Toast.makeText(getApplicationContext(), "클릭한 position:" + position, Toast.LENGTH_LONG).show();
+    	                    }
+    	                });
 
-	                // TextView 생성
-	                TextView tvProducer = new TextView(Item_list.this);
-	                tvProducer.setText("i_producer : " + i_producer + "  ");
-	                ll.addView(tvProducer);
-	                
-	                // TextView 생성
-	                TextView tvQuality = new TextView(Item_list.this);
-	                tvQuality.setText("i_quality : " + i_quality + "  ");
-	                ll.addView(tvQuality);
-	                
-	                // TextView 생성
-	                TextView tvpurchased = new TextView(Item_list.this);
-	                tvpurchased.setText("i_purchased : " + i_purchased + "  ");
-	                ll.addView(tvpurchased);
-	                
-	                // TextView 생성
-	                TextView tvDate = new TextView(Item_list.this);
-	                tvDate.setText("i_date : " + i_date + "  ");
-	                ll.addView(tvDate);
+    	                //버튼 add
+    	                ll.addView(btn);
+    	                //LinearLayout 정의된거 add
+    	                lm.addView(ll);
+                	}
+                }
+//	            for(int i=0;i<jsonArray.length();i++){
+//
+//	                JSONObject item = jsonArray.getJSONObject(i);
+//
+//	                String i_name = item.getString(TAG_NAME);
+//	                String i_producer = item.getString(TAG_PRODUCER);
+//	                String i_quality = item.getString(TAG_QUALITY);
+//	                String i_purchased = item.getString(TAG_PURCHASED);
+//	                String i_date = item.getString(TAG_DATE);
+//
+//	                //구조체에 넣기
+//	                adapter.addItem(i_name, i_producer, i_quality, i_purchased, i_date);
+//	                
+//	                
+//	             // LinearLayout 생성
+//	                LinearLayout ll = new LinearLayout(Item_list.this);
+//	                ll.setOrientation(LinearLayout.HORIZONTAL);
+//
+//	                // TextView 생성
+//	                TextView tvName = new TextView(Item_list.this);
+//	                tvName.setText("Name : " + i_name + " ");
+//	                ll.addView(tvName);
+//
+//	                // TextView 생성
+//	                TextView tvProducer = new TextView(Item_list.this);
+//	                tvProducer.setText("i_producer : " + i_producer + "  ");
+//	                ll.addView(tvProducer);
+//	                
+//	                // TextView 생성
+//	                TextView tvQuality = new TextView(Item_list.this);
+//	                tvQuality.setText("i_quality : " + i_quality + "  ");
+//	                ll.addView(tvQuality);
+//	                
+//	                // TextView 생성
+//	                TextView tvpurchased = new TextView(Item_list.this);
+//	                tvpurchased.setText("i_purchased : " + i_purchased + "  ");
+//	                ll.addView(tvpurchased);
+//	                
+//	                // TextView 생성
+//	                TextView tvDate = new TextView(Item_list.this);
+//	                tvDate.setText("i_date : " + i_date + "  ");
+//	                ll.addView(tvDate);
 
 	                // 버튼 생성
-	                final Button btn = new Button(Item_list.this);
-	                // setId 버튼에 대한 키값
-	                btn.setId(i + 1);
-	                btn.setText("Apply");
-	                btn.setLayoutParams(params);
-
-	                final int position = i;
-
-	                btn.setOnClickListener(new OnClickListener() {
-	                    public void onClick(View v) {
-	                        Log.d("log", "position :" + position);
-	                        Toast.makeText(getApplicationContext(), "클릭한 position:" + position, Toast.LENGTH_LONG).show();
-	                    }
-	                });
-
-	                //버튼 add
-	                ll.addView(btn);
-	                //LinearLayout 정의된거 add
-	                lm.addView(ll);
+	                
+//	                final Button btn = new Button(Item_list.this);
+//	                // setId 버튼에 대한 키값
+//	                btn.setId(i + 1);
+//	                btn.setText("Apply");
+//	                btn.setLayoutParams(params);
+//
+//	                final int position = i;
+//
+//	                btn.setOnClickListener(new OnClickListener() {
+//	                    public void onClick(View v) {
+//	                        Log.d("log", "position :" + position);
+//	                        Toast.makeText(getApplicationContext(), "클릭한 position:" + position, Toast.LENGTH_LONG).show();
+//	                    }
+//	                });
+//
+//	                //버튼 add
+//	                ll.addView(btn);
+//	                //LinearLayout 정의된거 add
+//	                lm.addView(ll);
 	                
 	                
 //	                PersonalData personalData = new PersonalData();
@@ -229,7 +311,7 @@ public class Item_list extends Activity {
 //
 //	                mArrayList.add(personalData);
 //	                mAdapter.notifyDataSetChanged();
-	            }
+//	            }
 
 
 
