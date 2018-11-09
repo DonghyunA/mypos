@@ -159,6 +159,7 @@ public class Item_list extends Activity {
 	        String TAG_NAME = "i_name";
 	        String TAG_PRODUCER = "i_producer";
 	        String TAG_QUALITY ="i_quality";
+	        String TAG_QUANTITY = "i_quantity";
 	        String TAG_PURCHASED ="i_purchased";
 	        String TAG_DATE ="i_date";
 	        final LinearLayout lm = (LinearLayout) findViewById(R.id.l_layout);
@@ -184,13 +185,13 @@ public class Item_list extends Activity {
     	                String i_name = item.getString(TAG_NAME);
     	                String i_producer = item.getString(TAG_PRODUCER);
     	                String i_quality = item.getString(TAG_QUALITY);
+    	                String i_quantity = item.getString(TAG_QUANTITY);
     	                String i_purchased = item.getString(TAG_PURCHASED);
     	                String i_date = item.getString(TAG_DATE);
-
     	                //구조체에 넣기
     	                if(j==0)
     	                {
-    	                	adapter.addItem(i_name, i_producer, i_quality, i_purchased, i_date);
+    	                	adapter.addItem(i_name, i_producer, i_quality, i_quantity, i_purchased, i_date);
     	                }
     	                
     	                //System.out.println("j=" + j + "    k="+ k + "bool = " + SoundSearcher.matchfirstchar(jsonArray.getJSONObject(k).getString(TAG_NAME), INITIAL_SOUND[j]));

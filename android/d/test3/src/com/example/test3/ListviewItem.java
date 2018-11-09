@@ -4,6 +4,7 @@ public class ListviewItem {
 	private String list_i_name;
 	private String list_i_producer;
 	private String list_i_quality;
+	private String list_i_quantity;
 	private String list_i_purchased;
 	private String list_i_date;
 	public String getList_i_name() {
@@ -35,5 +36,11 @@ public class ListviewItem {
 	}
 	public void setList_i_date(String list_i_date) {
 		this.list_i_date = list_i_date;
+	}
+	public String getList_i_quantity() {
+		return list_i_quantity;
+	}
+	public void setList_i_quantity(String list_i_quantity) {
+		this.list_i_quantity = list_i_quantity;
 	}
 }

@@ -22,6 +22,7 @@
 					array('i_name'=>$i_name,
 					'i_producer'=>$i_producer,
 					'i_quality'=>$i_quality,
+					'i_quantity'=>$i_quantity,
 					'i_purchased'=>$i_purchased,
 					'i_date'=>$i_date
 				));
