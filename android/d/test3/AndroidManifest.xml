@@ -56,8 +56,12 @@
             android:label="@string/title_activity_web_view" >
         </activity>
         <activity
-            android:name=".Item_list"
+            android:name=".Select_Item_Activity"
             android:label="@string/title_activity_item_list" >
+        </activity>
+        <activity
+            android:name=".Basket_Item_activity"
+            android:label="@string/title_activity_basket__item_activity" >
         </activity>
     </application>
 

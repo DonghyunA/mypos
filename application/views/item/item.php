@@ -118,6 +118,11 @@
                         title: '구입처',
                         sortable: true,
                     }, {
+                        field: 'i_price',
+                        title: '구매가격',
+                        sortable: true,
+                        formatter:"priceFormatter",
+                    }, {
                         field: 'i_date',
                         title: '등록날짜',
                         sortable: true,
@@ -201,6 +206,9 @@
             total += +(row.price.substring(1));
         });
         return '$' + total;
+    }
+    function priceFormatter(data){
+        return '￦'+ data;
     }
     function getHeight() {
         return $(window).height() - $('h1').outerHeight(true);

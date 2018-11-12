@@ -22,6 +22,7 @@ class Item extends CI_Controller {
         'i_quality'=>$this->input->post('i_quality'),
         'i_quantity'=>$this->input->post('i_quantity'),
         'i_purchased'=>$this->input->post('i_purchased'),
+        'i_price'=>$this->input->post('i_price'),
         'i_date'=>date("Y-m-d"),
         );
         

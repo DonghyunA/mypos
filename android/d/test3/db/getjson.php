@@ -19,11 +19,13 @@
 			if( $i_whos ==$_POST['i_whos'])
 			{
 				array_push($data, 
-					array('i_name'=>$i_name,
+					array('i_id'=>$i_id,
+					'i_name'=>$i_name,
 					'i_producer'=>$i_producer,
 					'i_quality'=>$i_quality,
 					'i_quantity'=>$i_quantity,
 					'i_purchased'=>$i_purchased,
+					'i_price'=>$i_price,					
 					'i_date'=>$i_date
 				));
 			}

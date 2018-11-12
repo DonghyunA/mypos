@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(getApplicationContext(), Item_list.class);
+				Intent intent = new Intent(getApplicationContext(), Select_Item_Activity.class);
 				intent.putExtra("user_id",user_id);
 				startActivity(intent);
 				

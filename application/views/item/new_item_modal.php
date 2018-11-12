@@ -110,6 +110,18 @@
 				</div>
 			</div>
 
+			<div class="form-group form-group-sm">	
+				<?php echo form_label('구매 가격', 'i_price', array('class'=>'control-label col-xl-3')); ?>
+				<div class='col-xl-8'>
+					<?php echo form_input(array(
+							'name'=>'i_price',
+							'id'=>'i_price',
+							'class'=>'form-control input-sm',
+							'value'=>'')
+							);?>
+				</div>
+			</div>
+
 			
 			<div class="modal-footer">
 				<button type="submit" class="btn btn-default" data-dismiss="modal">취소</button>
