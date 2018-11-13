@@ -22,7 +22,7 @@ class Item extends CI_Controller {
         'i_quality'=>$this->input->post('i_quality'),
         'i_quantity'=>$this->input->post('i_quantity'),
         'i_purchased'=>$this->input->post('i_purchased'),
-        'i_price'=>$this->input->post('i_price'),
+        'i_price'=>str_replace(",","",$this->input->post('i_price')),
         'i_date'=>date("Y-m-d"),
         );
         
@@ -42,8 +42,8 @@ class Item extends CI_Controller {
     }
     public function delete_item_info()
     {
-        $items_to_delete = $this->input->post('c_business_name');//isset($_POST['c_business_name']) ? $_POST['c_business_name'] : NULL;
-        $this->Customer_model->delete_customer_info_row($items_to_delete);
+        $items_to_delete = $this->input->post('i_id');//isset($_POST['c_business_name']) ? $_POST['c_business_name'] : NULL;
+        $this->Item_model->delete_item_info_row($items_to_delete);
     }
 }
 ?>

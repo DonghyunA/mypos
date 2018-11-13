@@ -33,7 +33,7 @@ class Item_model extends CI_model{
         public function delete_item_info_row($items_to_delete){
                 foreach($items_to_delete as $info)
                 {
-                        $this->db->delete('item',array('c_business_name'=> $info, 'i_whos'=> $this->session->userdata('user_email')));
+                        $this->db->delete('item',array('i_id'=> $info, 'i_whos'=> $this->session->userdata('user_email')));
                 }
                 
         }

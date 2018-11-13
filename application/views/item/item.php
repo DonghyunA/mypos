@@ -69,7 +69,7 @@
                         data-detail-formatter="detailFormatter"
                         data-minimum-count-columns="2"
                         data-show-pagination-switch="true"
-                        data-id-field="c_business_name"
+                        data-id-field="i_id"
                         >
                 </table>
               </div>
@@ -85,6 +85,12 @@
 
 
 <script type="text/javascript">
+$("#i_price").on('keyup', function(evt){
+    if (evt.which != 110 ){//not a fullstop
+        var n = parseFloat($(this).val().replace(/\,/g,''),10);
+        $(this).val(n.toLocaleString());
+    }
+});
   var $table = $('#table'),
       $remove = $('#remove'),
       selections = [];
@@ -97,6 +103,10 @@
                         checkbox: true,
                         align: 'center',
                         valign: 'middle'
+                    }, {
+                        title: 'i_id',
+                        field: 'i_id',
+                        visible: false,
                     }, {
                         title: '품목명',
                         field: 'i_name',
@@ -164,7 +174,7 @@
         $remove.click(function () {
             var ids = getIdSelections();
             $table.bootstrapTable('remove', {
-                field: 'c_business_name',
+                field: 'i_id',
                 values: ids
             });
             delete_customer_info(ids);
@@ -178,12 +188,12 @@
     }
     function getIdSelections() {
         return $.map($table.bootstrapTable('getSelections'), function (row) {
-            return row.c_business_name
+            return row.i_id
         });
     }
     function responseHandler(res) {
         $.each(res.rows, function (i, row) {
-            row.state = $.inArray(row.c_business_name, selections) !== -1;
+            row.state = $.inArray(row.i_id, selections) !== -1;
         });
         return res;
     }
@@ -208,13 +218,14 @@
         return '$' + total;
     }
     function priceFormatter(data){
-        return '￦'+ data;
+        var regexp = /\B(?=(\d{3})+(?!\d))/g;
+        return '￦'+ data.toString().replace(regexp, ',');;
     }
     function getHeight() {
         return $(window).height() - $('h1').outerHeight(true);
     }
     function delete_customer_info(ids){
-        $.post(location.search.substring(1) + 'customer/delete_customer_info', {"c_business_name": ids}, function (response) {
+        $.post(location.search.substring(1) + 'Item/delete_item_info', {"i_id": ids}, function (response) {
             //delete was successful, remove checkbox rows
             if (response.success) {
                 console.log(response.success);
