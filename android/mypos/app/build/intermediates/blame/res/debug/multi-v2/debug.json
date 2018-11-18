@@ -1,0 +1,134 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13_values-w820dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "from": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "312",
+                        "endColumns": "57",
+                        "endOffsets": "365"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "33,26,19,13,5,3,4,47,7,11,10,46,6,9,8,45",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1198,1000,807,645,157,59,103,1691,273,559,495,1627,211,427,363,1558",
+                        "endLines": "43,32,25,18,5,3,4,47,7,11,10,46,6,9,8,45",
+                        "endColumns": "19,19,19,19,52,42,52,85,88,82,62,62,60,66,62,67",
+                        "endOffsets": "1550,1192,994,801,205,97,151,1772,357,637,553,1685,267,489,421,1621"
+                    },
+                    "to": {
+                        "startLines": "2,13,20,27,35,36,37,38,39,40,41,42,43,44,45,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,402,593,779,1049,1102,1145,1198,1284,1373,1456,1519,1582,1643,1710,1773",
+                        "endLines": "12,19,26,32,35,36,37,38,39,40,41,42,43,44,45,46",
+                        "endColumns": "19,19,19,19,52,42,52,85,88,82,62,62,60,66,62,67",
+                        "endOffsets": "397,588,774,930,1097,1140,1193,1279,1368,1451,1514,1577,1638,1705,1768,1836"
+                    }
+                },
+                {
+                    "source": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "33,34",
+                        "startColumns": "4,4",
+                        "startOffsets": "935,993",
+                        "endColumns": "57,55",
+                        "endOffsets": "988,1044"
+                    }
+                },
+                {
+                    "source": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "192,525",
+                        "endLines": "12,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "484,682"
+                    },
+                    "to": {
+                        "startLines": "47,54",
+                        "startColumns": "4,4",
+                        "startOffsets": "1841,2132",
+                        "endLines": "53,56",
+                        "endColumns": "12,12",
+                        "endOffsets": "2127,2287"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\build\\intermediates\\res\\merged\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "183",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "312"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "182"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\build\\intermediates\\res\\merged\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\xampp\\htdocs\\gitpos\\mypos\\android\\mypos\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "227",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "356"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "182"
+                    }
+                }
+            ]
+        }
+    ]
+}

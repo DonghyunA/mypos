@@ -1,6 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">mypos</string>
-	<string name="title_home">Home</string>
-	<string name="title_dashboard">Dashboard</string>
-	<string name="title_notifications">Notifications</string>
+
+    <string name="app_name">test3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_qr_maker">Qr_maker</string>
+    <string name="title_activity_daum_web_view_activity">Daum_web_view_activity</string>
+    <string name="title_activity_send_info">Send_info</string>
+    <string name="title_activity_resive_info">Resive_info</string>
+    <string name="title_activity_item_info">Item_info</string>
+    <string name="title_activity_insertandshowqrcode">InsertAndShowQRCode</string>
+
+    <string-array name="tel_first">
+        <item>010</item>
+        <item>011</item>
+        <item>019</item>
+        <item>017</item>
+    </string-array>
+    <string-array name="item_weight">
+        <item>2kg</item>
+        <item>5kg</item>
+        <item>10kg</item>
+        <item>20kg</item>
+        <item>30kg</item>
+    </string-array>
+    <string-array name="item_volume">
+        <item>60cm</item>
+        <item>80cm</item>
+        <item>120cm</item>
+        <item>140cm</item>
+        <item>160cm</item>
+    </string-array>
+    <string-array name="item_code">
+        <item>[21]농/수/축산물(일반)</item>
+        <item>[22]농/수/축산물(냉동/냉장)</item>
+        <item>[23]전자제품</item>
+        <item>[24]서적</item>
+        <item>[25]의류/패션잡화</item>
+        <item>[26]미용/화장품</item>
+        <item>[27]의료/건강식품</item>
+        <item>[28]생활용품</item>
+        <item>[29]기타</item>
+    </string-array>
+
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_item_list">Item_list</string>
+    <string name="title_activity_basket__item_activity">Basket_Item_activity</string>
+
 </resources>

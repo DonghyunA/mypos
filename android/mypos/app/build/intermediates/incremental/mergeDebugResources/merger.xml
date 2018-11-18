@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res"/><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\build\generated\res\rs\debug"/><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\build\generated\res\resValues\debug"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res"><file name="ic_launcher" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\drawable-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\drawable-ldpi\ic_launcher.png" qualifiers="ldpi-v4" type="drawable"/><file name="ic_launcher" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\drawable-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\drawable-xxhdpi\ic_launcher.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="activity_basket__item_activity" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_basket__item_activity.xml" qualifiers="" type="layout"/><file name="activity_daum_web_view_activity" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_daum_web_view_activity.xml" qualifiers="" type="layout"/><file name="activity_insertandshowqrcode" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_insertandshowqrcode.xml" qualifiers="" type="layout"/><file name="activity_item_info" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_item_info.xml" qualifiers="" type="layout"/><file name="activity_item_list" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_item_list.xml" qualifiers="" type="layout"/><file name="activity_main" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="activity_qr_maker" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_qr_maker.xml" qualifiers="" type="layout"/><file name="activity_resive_info" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_resive_info.xml" qualifiers="" type="layout"/><file name="activity_send_info" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_send_info.xml" qualifiers="" type="layout"/><file name="activity_web_view" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\activity_web_view.xml" qualifiers="" type="layout"/><file name="listview_item" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\layout\listview_item.xml" qualifiers="" type="layout"/><file name="main" path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\menu\main.xml" qualifiers="" type="menu"/><file path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="activity_horizontal_margin">16dp</dimen><dimen name="activity_vertical_margin">16dp</dimen></file><file path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">test3</string><string name="hello_world">Hello world!</string><string name="action_settings">Settings</string><string name="title_activity_qr_maker">Qr_maker</string><string name="title_activity_daum_web_view_activity">Daum_web_view_activity</string><string name="title_activity_send_info">Send_info</string><string name="title_activity_resive_info">Resive_info</string><string name="title_activity_item_info">Item_info</string><string name="title_activity_insertandshowqrcode">InsertAndShowQRCode</string><string-array name="tel_first">
+        <item>010</item>
+        <item>011</item>
+        <item>019</item>
+        <item>017</item>
+    </string-array><string-array name="item_weight">
+        <item>2kg</item>
+        <item>5kg</item>
+        <item>10kg</item>
+        <item>20kg</item>
+        <item>30kg</item>
+    </string-array><string-array name="item_volume">
+        <item>60cm</item>
+        <item>80cm</item>
+        <item>120cm</item>
+        <item>140cm</item>
+        <item>160cm</item>
+    </string-array><string-array name="item_code">
+        <item>[21]농/수/축산물(일반)</item>
+        <item>[22]농/수/축산물(냉동/냉장)</item>
+        <item>[23]전자제품</item>
+        <item>[24]서적</item>
+        <item>[25]의류/패션잡화</item>
+        <item>[26]미용/화장품</item>
+        <item>[27]의료/건강식품</item>
+        <item>[28]생활용품</item>
+        <item>[29]기타</item>
+    </string-array><string name="title_activity_web_view">WebViewActivity</string><string name="title_activity_item_list">Item_list</string><string name="title_activity_basket__item_activity">Basket_Item_activity</string></file><file path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppBaseTheme" parent="android:Theme.Light">
+        
+    </style><style name="AppTheme" parent="AppBaseTheme">
+        
+    </style></file><file path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Light">
+        
+    </style></file><file path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\values-v14\styles.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Light">
+        
+    </style></file><file path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\main\res\values-w820dp\dimens.xml" qualifiers="w820dp-v13"><dimen name="activity_horizontal_margin">64dp</dimen></file></source><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\build\generated\res\rs\debug"/><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug$Generated" generated="true"><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\debug\res"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="C:\xampp\htdocs\gitpos\mypos\android\mypos\app\src\debug\res"/></dataSet><mergedItems/></merger>

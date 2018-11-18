@@ -1,0 +1,156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00000000"
+    android:orientation="vertical" >
+
+<TextView 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="보내는 분"
+    android:textStyle="bold"
+    android:background="#99d9ea"
+    />
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="3dp"
+	    android:layout_marginTop="3dp"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="송하인 명"
+	        android:width="66dp" />
+
+	    <EditText
+	        android:id="@+id/txt_s_name"
+	        android:layout_width="match_parent"
+	        android:layout_height="45dp"
+	        android:background="#efefef"
+	        android:ems="9"
+	        android:hint="성명"
+	        android:singleLine="true"
+	        android:inputType="textPersonName" />
+	</LinearLayout>
+
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_marginLeft="3dp"
+	    android:layout_marginTop="3dp">
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="전화번호"
+	        android:width="66dp"	        
+	        />
+
+	    <Spinner
+	        android:id = "@+id/snipper2"
+	        android:layout_width="115dp"
+	        android:layout_height="wrap_content"
+	        android:entries="@array/tel_first"/>
+
+	    <EditText
+	    	android:id="@+id/txt_s_phone"
+	        android:layout_width="match_parent"
+	        android:layout_height="42dp"
+	        android:background="#eeeeee"
+	        android:ems="9"
+	        android:hint="전화번호"
+	        android:singleLine="true"
+	        android:inputType="textPersonName" />
+
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="3dp"
+	    android:layout_marginTop="3dp"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="주소"
+	        android:width="66dp" />
+
+	    <EditText
+	        android:id="@+id/txt_s_addr1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="38dp"
+	        android:layout_weight="0.30"
+	        android:background="#eeeeee"
+	        android:clickable="false"
+	        android:ems="9"
+	        android:focusable="false"
+	        android:inputType="textPostalAddress" />
+
+	    <Button
+	        android:id="@+id/btn_s_addr"
+	        android:layout_width="76dp"
+	        android:layout_height="38dp"
+	        android:background="#9BE8D7"
+	        android:text="주소검색" />
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="3dp"
+	    android:layout_marginTop="3dp"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:width="66dp" />
+
+	    <EditText
+	        android:id="@+id/txt_s_addr2"
+	        android:layout_width="match_parent"
+	        android:layout_height="38dp"
+	        android:layout_marginRight="10dp"
+	        android:layout_weight="0.92"
+	        android:background="#eeeeee"
+	        android:ems="9"
+	        android:hint="상세주소"
+	        android:singleLine="true"
+	        android:inputType="textPostalAddress" />
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="3dp"
+	    android:layout_marginTop="3dp"
+	    android:gravity="center"
+	    android:orientation="horizontal" >
+
+	    <Button
+	        android:id="@+id/btn_send_previous"
+	        android:layout_width="wrap_content"
+	        android:layout_height="36dp"
+	        android:layout_marginRight="10dp"
+	        android:layout_weight="0.45"
+	        android:background="#99d9ea"
+	        android:gravity="center"
+	        android:text="이전" />
+
+	    <Button
+	        android:id="@+id/btn_send_next"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_weight="0.39"
+	        android:background="#99d9ea"
+	        android:gravity="center"
+	        android:text="다음" />
+
+	</LinearLayout>
+
+</LinearLayout>
