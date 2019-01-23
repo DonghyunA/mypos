@@ -41,7 +41,8 @@ class Customer_model extends CI_model{
         public function get_customer_info_all(){
                 $this->db->from('customer');
 		//$this->db->join('user', 'customer.c_whos = user.user_email');
-		$this->db->where('c_whos', $this->session->userdata('user_email'));
+                $this->db->where('c_whos', $this->session->userdata('user_email'));
+                $this->db->where('c_deleted', '0');
 		//$this->db->order_by('last_name', 'asc');
                 $query=$this->db->get();
 		return $query->result();
@@ -50,7 +51,9 @@ class Customer_model extends CI_model{
         public function delete_customer_info_row($customers_to_delete){
                 foreach($customers_to_delete as $info)
                 {
-                        $this->db->delete('customer',array('c_business_name'=> $info, 'c_whos'=> $this->session->userdata('user_email')));
+                        /* delete db -> delete flag */
+                        $this->db->update('customer', array('c_deleted' => '1'), array('c_id'=> $info, 'c_whos'=> $this->session->userdata('user_email')));
+                        //$this->db->delete('customer',array('c_business_name'=> $info, 'c_whos'=> $this->session->userdata('user_email')));
                 }
                 
         }

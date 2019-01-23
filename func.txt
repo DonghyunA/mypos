@@ -1,0 +1,3 @@
+1. mysql에 고객정보 import하기
+2. android에 상품 판매
+3. 통계

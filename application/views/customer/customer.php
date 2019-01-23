@@ -98,6 +98,10 @@
                         align: 'center',
                         valign: 'middle'
                     }, {
+                        title: 'c_id',
+                        field: 'c_id',
+                        visible: false,
+                    }, {
                         title: '상호명',
                         field: 'c_business_name',
                         sortable: true,
@@ -175,7 +179,7 @@
         $remove.click(function () {
             var ids = getIdSelections();
             $table.bootstrapTable('remove', {
-                field: 'c_business_name',
+                field: 'c_id',
                 values: ids
             });
             delete_customer_info(ids);
@@ -189,12 +193,12 @@
     }
     function getIdSelections() {
         return $.map($table.bootstrapTable('getSelections'), function (row) {
-            return row.c_business_name
+            return row.c_id
         });
     }
     function responseHandler(res) {
         $.each(res.rows, function (i, row) {
-            row.state = $.inArray(row.c_business_name, selections) !== -1;
+            row.state = $.inArray(row.c_id, selections) !== -1;
         });
         return res;
     }
@@ -222,7 +226,7 @@
         return $(window).height() - $('h1').outerHeight(true);
     }
     function delete_customer_info(ids){
-        $.post(location.search.substring(1) + 'customer/delete_customer_info', {"c_business_name": ids}, function (response) {
+        $.post(location.search.substring(1) + 'customer/delete_customer_info', {"c_id": ids}, function (response) {
             //delete was successful, remove checkbox rows
             if (response.success) {
                 console.log(response.success);

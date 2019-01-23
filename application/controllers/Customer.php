@@ -53,7 +53,7 @@ class Customer extends CI_Controller {
     }
     public function delete_customer_info()
     {
-        $customers_to_delete = $this->input->post('c_business_name');//isset($_POST['c_business_name']) ? $_POST['c_business_name'] : NULL;
+        $customers_to_delete = $this->input->post('c_id');//isset($_POST['c_business_name']) ? $_POST['c_business_name'] : NULL;
         $this->Customer_model->delete_customer_info_row($customers_to_delete);
     }
 }
